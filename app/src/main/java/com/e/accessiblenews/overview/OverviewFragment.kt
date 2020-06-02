@@ -7,10 +7,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-
 import com.e.accessiblenews.R
 import com.e.accessiblenews.databinding.FragmentOverviewBinding
-import com.e.accessiblenews.databinding.GridViewItemBinding
 
 class OverviewFragment : Fragment() {
     private lateinit var binding: FragmentOverviewBinding

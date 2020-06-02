@@ -37,11 +37,24 @@
                     android:layout_width="0dp"
                     android:layout_height="266dp"
                     android:scaleType="centerCrop"
+                    android:contentDescription="@null"
                     app:imageUrl="@{detailViewModel.selectedArticle.imageURLs[0].url}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:src="@tools:sample/backgrounds/scenic" />
+
+                <TextView
+                    android:id="@+id/imageCaption"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    app:layout_constraintTop_toBottomOf="@id/mainImage"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@{detailViewModel.selectedArticle.imageURLs[0].caption}"
+                    tools:text="A caterpillar sits on a small branch in the woods." />
 
                 <TextView
                     android:id="@+id/headlineText"
@@ -50,24 +63,37 @@
                     android:layout_marginTop="@dimen/headline_top_margin"
                     android:padding="10dp"
                     android:text="@{detailViewModel.selectedArticle.title}"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/mainImage"
-                    tools:text="Caterpillars turn into butterfiles faster in 2020" />
+                    app:layout_constraintTop_toBottomOf="@id/imageCaption"
+                    tools:text="@string/sample_headline" />
+
+                <TextView
+                    android:id="@+id/dateText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:padding="10dp"
+                    android:text="@{detailViewModel.articleDate}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/headlineText"
+                    tools:text="May 30, 2020"/>
 
                 <TextView
                     android:id="@+id/exerptText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_width="0dp"
+                    android:layout_height="1192dp"
                     android:padding="10dp"
                     android:text="@{detailViewModel.selectedArticle.excerpt}"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/headlineText"
+                    app:layout_constraintTop_toBottomOf="@id/dateText"
+                    tools:layout_editor_absoluteY="453dp"
                     tools:text="@tools:sample/lorem/random" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>

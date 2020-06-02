@@ -27,7 +27,6 @@ interface NewsApiService {
     fun getNews(@Query("api-key") apiKey: String): Deferred<NewsObject>
 }
 
-// Expose the service I made above to the rest of the app
 object NewsAPI {
     val retrofitService: NewsApiService by lazy {
         retrofit.create(NewsApiService::class.java)
