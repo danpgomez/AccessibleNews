@@ -3,6 +3,7 @@ package com.e.accessiblenews.model
 import android.os.Parcelable
 import com.squareup.moshi.Json
 import kotlinx.android.parcel.Parcelize
+import java.util.*
 
 @Parcelize
 data class Article (
@@ -13,7 +14,7 @@ data class Article (
     val excerpt: String,
 
     @Json(name = "published_date")
-    val publishedDate: String,
+    val publishedDate: Date,
 
     @Json(name = "multimedia")
     val imageURLs: List<Thumbnail>?

@@ -4,6 +4,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import java.time.format.DateTimeFormatter
 
+/* This class is currently not used but I may implement it down the road */
 class Utils {
     @RequiresApi(Build.VERSION_CODES.O)
     fun formatDate(value: String): String {
