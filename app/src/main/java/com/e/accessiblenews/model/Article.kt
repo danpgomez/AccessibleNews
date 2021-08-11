@@ -14,7 +14,7 @@ data class Article (
     val excerpt: String,
 
     @Json(name = "published_date")
-    val publishedDate: Date,
+    val publishedDate: String,
 
     @Json(name = "multimedia")
     val imageURLs: List<Thumbnail>?

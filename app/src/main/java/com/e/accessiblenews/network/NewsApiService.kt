@@ -10,7 +10,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 import java.util.*
-import com.squareup.moshi.Rfc3339DateJsonAdapter
+import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter
 
 private const val BASE_URL = "https://api.nytimes.com/"
 
@@ -27,7 +27,7 @@ private val retrofit = Retrofit.Builder()
 
 interface NewsApiService {
     @GET("svc/topstories/v2/home.json")
-    fun getNews(@Query("api-key") apiKey: String): Deferred<NewsObject>
+    fun getNewsAsync(@Query("api-key") apiKey: String): Deferred<NewsObject>
 }
 
 object NewsAPI {

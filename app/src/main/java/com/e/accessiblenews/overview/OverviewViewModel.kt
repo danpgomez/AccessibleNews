@@ -40,7 +40,7 @@ class OverviewViewModel: ViewModel() {
 
     private fun getNewsData() {
         coroutineScope.launch {
-            val getNewsDeferred = NewsAPI.retrofitService.getNews(API_KEY)
+            val getNewsDeferred = NewsAPI.retrofitService.getNewsAsync(API_KEY)
 
             try {
                 _status.value = NewsApiStatus.LOADING
